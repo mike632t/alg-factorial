@@ -1,0 +1,92 @@
+PROGRAM factorial
+ 
+{  Copyright(C)1997, 2011    MEJT
+ 
+   Displays  factorials of all integers between 0 and the upper limit  using
+   resursion.
+  
+   This  program is free software: you can redistribute it and/or modify  it
+   under  the  terms of the GNU General Public License as published  by  the
+   Free  Software  Foundation, either version 3 of the License, or (at  your
+   option) any later version.
+ 
+   This  program  is  distributed in the hope that it will  be  useful,  but
+   WITHOUT   ANY   WARRANTY;   without  even   the   implied   warranty   of
+   MERCHANTABILITY  or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+   Public License for more details.
+ 
+   You  should have received a copy of the GNU General Public License  along
+   with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+   19 Apr 97 0.1  001 - Initial version - MEJT
+   27 Dec 11 0.2  002 - Modified to use LONG instead of INT - MEJT
+   
+}
+ 
+BEGIN
+
+   LONG INT limit = LONG 20;  {Upper limit for a long integer is 20!}
+   LONG INT one = LONG 1; 
+   LONG INT count := LONG 0;
+
+   PROC fact = (LONG INT number) LONG INT:
+
+   { Recursive routine to calculate the factorial of an integer using long integers. }
+
+   IF number <= one  THEN
+      one
+   ELSE
+      number * fact (number - one)
+   FI;
+ 
+   WHILE count <= limit DO
+      write ((fixed (count, -2, 0), "! := ", fixed ((fact(count)), -0, 0), newline));
+      count := count + one
+   OD
+ 
+END
+ 
+FINISH.
+
+
+PROGRAM factorial
+ 
+{  Copyright(C)1997    MEJT
+ 
+   Displays factorials of all integers between 0 and the defiens limit using
+   resursion.
+ 
+   This  program is free software: you can redistribute it and/or modify  it
+   under  the  terms of the GNU General Public License as published  by  the
+   Free  Software  Foundation, either version 3 of the License, or (at  your
+   option) any later version.
+ 
+   This  program  is  distributed in the hope that it will  be  useful,  but
+   WITHOUT   ANY   WARRANTY;   without  even   the   implied   warranty   of
+   MERCHANTABILITY  or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General
+   Public License for more details.
+ 
+   You  should have received a copy of the GNU General Public License  along
+   with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+   19 Apr 97 0.1  001 - Initial version - MEJT
+   
+}
+
+BEGIN
+
+   PROC fact = (INT number) INT:
+   IF number = 1 THEN
+      1
+   ELSE
+      number * fact (number-1)
+   FI; {fact}
+
+   FOR count FROM 1 TO 12 DO
+      write ((fixed (count, -2, 0), "! := ", fixed (fact (count), -0, 0), newline))
+   OD
+
+END
+
+FINISH.
+
