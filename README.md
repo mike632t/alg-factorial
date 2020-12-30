@@ -1,9 +1,8 @@
-## alg-factorial - An array of strings.
+## alg-factorial - The classic recurion problem.
 
 Written in Algol 68. 
 
-The classic recurion problem. Outputs the factorial of all integers between
-0 and the upper limit using resursion.
+Outputs the factorial of all integers between 0 and the upper limit using resursion.
 
 On VAX/VMS compile using:
   
